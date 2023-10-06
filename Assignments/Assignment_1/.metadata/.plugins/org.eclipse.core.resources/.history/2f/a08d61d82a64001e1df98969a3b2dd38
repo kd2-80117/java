@@ -1,0 +1,12 @@
+package a1q1;
+
+public class a1q1 {
+
+	public static void main(String[] args) {
+		Scanner sc = new scanner(System.in) {
+			
+		}
+
+	}
+
+}
