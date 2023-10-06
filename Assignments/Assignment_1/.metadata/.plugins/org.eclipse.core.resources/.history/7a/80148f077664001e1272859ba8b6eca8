@@ -10,6 +10,7 @@ public class a1q2 {
 
 		if (sc.hasNextDouble() != sc.hasNextInt()) {
 			num1 = sc.nextDouble();
+			 
 			System.out.println("ENTER THE NUM2 OF DOUBLE TYPE :");
 
 			if (sc.hasNextDouble() != sc.hasNextInt()) {
