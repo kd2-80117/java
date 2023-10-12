@@ -62,7 +62,8 @@ public class FruitBasket {
 					break;
 				}
 				for (Fruit fruit : basket) {
-					System.out.println(fruit.getName());
+					if (fruit != null)
+						System.out.println(fruit.getName());
 				}
 				break;
 			case 5:
@@ -71,15 +72,20 @@ public class FruitBasket {
 					break;
 				}
 				for (Fruit fruit : basket) {
-					System.out.println(fruit.toString());
+					if (fruit != null) {
+						System.out.println(fruit.toString());
+							
+					}
 				}
 
 				break;
 			case 6:
 
 				for (Fruit fruit : basket) {
-					if (!fruit.isFresh())
-						System.out.println(fruit.taste());
+					if (fruit != null) {
+						if (!fruit.isFresh())
+							System.out.println(fruit.taste());
+					}
 				}
 				break;
 			case 7:
@@ -93,12 +99,15 @@ public class FruitBasket {
 					System.out.println("Fruit marked as stale");
 					break;
 				}
-				
-			case 8: for (Fruit fruit : basket) {
-				if(fruit.taste()=="sour") {
-					fruit.setFresh(false);
+
+			case 8:
+				for (Fruit fruit : basket) {
+					if (fruit != null) {
+						if (fruit.taste() == "sour") {
+							fruit.setFresh(false);
+						}
+					}
 				}
-			}
 
 				break;
 			default:
