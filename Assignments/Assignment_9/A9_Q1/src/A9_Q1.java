@@ -14,7 +14,9 @@ static <T extends Number> T findMin(T [] arr) {
 	/*
 	 * static <T extends Number> T findMin(T [] arr) {
 	 * 
-	 * Arrays.sort(arr); return arr[0];
+	 * Arrays.sort(arr); 
+	 * 
+	 * return arr[0];
 	 * 
 	 * }
 	 */

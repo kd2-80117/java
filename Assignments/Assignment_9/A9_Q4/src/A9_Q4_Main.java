@@ -54,7 +54,7 @@ public class A9_Q4_Main {
 					System.out.println("Book at given index deleted");
 					break;
 				}
-				
+
 			case 4:
 				System.out.println("Enter isbn for searching = ");
 				isbn = sc.next();
@@ -62,10 +62,12 @@ public class A9_Q4_Main {
 				key.setIbsn(isbn);
 				System.out.println(bookList.contains(key));
 				break;
+				
 			case 5:
 				bookList.clear();
 				System.out.println("All books in list are deleted.");
 				break;
+				
 			case 6:
 
 				for (Book book : bookList) {
@@ -73,11 +75,13 @@ public class A9_Q4_Main {
 				}
 				System.out.println("Number of books in list = " + count);
 				break;
+				
 			case 7:
+				
 				class Arrsort implements Comparator<Book> {
 					@Override
 					public int compare(Book a, Book b) {
-						int diff = -Double.compare(a.getPrice(), b.getPrice());
+						int diff = - Double.compare(a.getPrice(), b.getPrice());
 
 						return diff;
 					}
@@ -90,6 +94,7 @@ public class A9_Q4_Main {
 					System.out.println(book);
 				}
 				break;
+				
 			default:
 				System.out.println("Wrong Choice Entered :(");
 				break;
