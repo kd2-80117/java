@@ -11,8 +11,8 @@ public class A13_Q3_Main {
 			try (BufferedWriter bwr = new BufferedWriter(fwr)) {
 				for (int i = 1; i <= 4; i++) {
 					String line = sc.nextLine();
-					bwr.write(line);
-					bwr.newLine();
+					bwr.write(line+"\n"); 
+					bwr.newLine(); //other way of adding new line
 				}
 			}
 		} catch (Exception e) {

@@ -12,7 +12,8 @@ public class A13_Q4_Main {
 				
 				while (true) {
 					String line = brd.readLine();
-					if(line!=null)
+					if(line==null)
+						break;
 					System.out.println(line);
 				}
 			
