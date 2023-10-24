@@ -1,3 +1,6 @@
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Practice2_Main {
@@ -32,27 +35,76 @@ public class Practice2_Main {
 				b.setDescription(sc.next());
 				System.out.print("Enter Assigned to = ");
 				b.setAssigned_to(sc.nextInt());
-				
-				try(BugDao bdao = new BugDao()){
-					System.out.println(bdao.addBug(b)+" Bug Added...");
+
+				try (BugDao bdao = new BugDao()) {
+					System.out.println(bdao.addBug(b) + " Bug Added...");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				break;
 			case 2:
-
+				System.out.print("Enter Id = ");
+				int id = sc.nextInt();
+				try (BugDao bdao = new BugDao()) {
+					System.out.println("Updated Row = " + bdao.updateBugStatus(id));
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case 3:
+				try (BugDao bdao = new BugDao()) {
+					List<BugHandler> list = bdao.showOpenBugs();
+					list.forEach(l -> System.out.println(l));
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 				break;
 			case 4:
-
+				try (BugDao bdao = new BugDao()) {
+					List<Report> list = bdao.showReport();
+					list.forEach(l -> System.out.println(l));
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case 5:
-
+				System.out.print("Enter Bug Id = ");
+				int bid = sc.nextInt();
+				System.out.print("Enter Member Id to assign bug= ");
+				int mid = sc.nextInt();
+				try (BugDao bdao = new BugDao()) {
+					System.out.println("Updated Row = " + bdao.updateAssignedMember(bid, mid));
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
+				
 			case 6:
-
+				try(BugDao bdao = new BugDao()){
+					List<Member> list = bdao.showMembers();
+					list.forEach(l -> System.out.println(l));
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 
 			default:
